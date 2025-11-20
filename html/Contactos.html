@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Museo Cultural</title>
+    <link rel="stylesheet" href="/css/styling.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+            <div class="navdiv container">
+                <div class="logo">
+                    <a href="#"><i class="fas fa-museum"></i> MUSEO NATURAL</a>
+                </div>
+                <ul>
+                    <li><a href="../index.html" class="nav-link" data-page="home">Inicio</a></li>
+                    <li><a href="/html/Docs.html" class="nav-link" data-page="exhibitions">Exposiciones</a></li>
+                    <li><a href="/html/tienda.html" class="nav-link active" data-page="shop">Tienda</a></li>
+                    <li><a href="/html/Contactos.html" class="nav-link" data-page="contact">Contacto</a></li>
+                    <li><a href="/html/register.html" class="nav-link" data-page="register">Registro</a></li>
+                    <li><a href="/html/login.html" class="nav-link" data-page="login">Login</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="search-container">
+                        <input class="srch" type="search" placeholder="Buscar productos...">
+                        <button class="btn search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="icon-buttons">
+                        <button class="icon-btn" id="wishlist-btn" title="Lista de deseos">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlist-count">0</span>
+                        </button>
+                        <button class="icon-btn" id="cart-btn" title="Carrito de compras">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    <!-- Contenido principal -->
+    <div class="main">
+        <div class="container">
+
+            <h2 class="section-title">Contáctanos</h2>
+
+            <div class="contact-wrapper">
+
+                <!-- Información lateral -->
+                <div class="contact-info">
+                    <div class="info-block">
+                        <h3>Información del Museo</h3>
+                        <p><i class="fas fa-location-dot"></i> Avenida Central, Ciudad Cultural</p>
+                        <p><i class="fas fa-phone"></i> +506 8888 8888</p>
+                        <p><i class="fas fa-envelope"></i> contacto@museocultural.com</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Horarios</h3>
+                        <p><i class="fas fa-clock"></i> Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                        <p><i class="fas fa-clock"></i> Sábados y Domingos: 10:00 AM - 5:00 PM</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Síguenos</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo *</label>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <input type="text" id="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="notification-container"></div>
+    <script src="/js/Java.js"></script>
+</body>
+</html>

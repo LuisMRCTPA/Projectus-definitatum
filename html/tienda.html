@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Museo Cultural</title>
+    <link rel="stylesheet" href="/css/styled.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navdiv container">
+                <div class="logo">
+                    <a href="#"><i class="fas fa-museum"></i> MUSEO NATURAL</a>
+                </div>
+                <ul>
+                    <li><a href="../index.html" class="nav-link" data-page="home">Inicio</a></li>
+                    <li><a href="/html/Docs.html" class="nav-link" data-page="exhibitions">Exposiciones</a></li>
+                    <li><a href="/html/tienda.html" class="nav-link active" data-page="shop">Tienda</a></li>
+                    <li><a href="/html/Contactos.html" class="nav-link" data-page="contact">Contacto</a></li>
+                    <li><a href="/html/register.html" class="nav-link" data-page="register">Registro</a></li>
+                    <li><a href="/html/login.html" class="nav-link" data-page="login">Login</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="search-container">
+                        <input class="srch" type="search" placeholder="Buscar productos...">
+                        <button class="btn search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="icon-buttons">
+                        <button class="icon-btn" id="wishlist-btn" title="Lista de deseos">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlist-count">0</span>
+                        </button>
+                        <button class="icon-btn" id="cart-btn" title="Carrito de compras">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#" class="nav-link" data-page="home">Inicio</a> / 
+                <span>Tienda</span>
+            </div>
+
+            <!-- Filtros y búsqueda -->
+            <div class="shop-controls">
+                <div class="filter-section">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="statues">Estatuas</button>
+                    <button class="filter-btn" data-filter="clothing">Ropa</button>
+                    <button class="filter-btn" data-filter="jewelry">Joyeria</button>
+                    <button class="filter-btn" data-filter="books">Libros</button>
+                </div>
+                <div class="sort-section">
+                    <select id="sort-select">
+                        <option value="name">Ordenar por nombre</option>
+                        <option value="price-low">Precio: menor a mayor</option>
+                        <option value="price-high">Precio: mayor a menor</option>
+                        <option value="popular">Más populares</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Sección de productos y carrito -->
+            <div class="shop-container">
+                <!-- Sección de productos -->
+                <div class="products-section">
+                    <h2 class="section-title">Productos Exclusivos del Museo</h2>
+                    <div class="products-grid" id="products-grid">
+                        <!-- Los productos se cargarán aquí con JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Panel lateral del carrito -->
+                <div class="sidebar" id="sidebar">
+                    <div class="sidebar-content">
+                        <!-- Carrito de compras -->
+                        <div class="cart-panel" id="cart-panel">
+                            <div class="panel-header">
+                                <h3><i class="fas fa-shopping-cart"></i> Tu Carrito</h3>
+                                <button class="close-panel" id="close-cart">&times;</button>
+                            </div>
+                            <div class="cart-items" id="cart-items">
+                                <div class="empty-cart" id="empty-cart">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <p>Tu carrito está vacío</p>
+                                </div>
+                            </div>
+                            <div class="cart-total" id="cart-total" style="display: none;">
+                                <div class="total-line">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal-amount">$0.00</span>
+                                </div>
+                                <div class="total-line">
+                                    <span>Envío:</span>
+                                    <span id="shipping-amount">$5.00</span>
+                                </div>
+                                <div class="total-line grand-total">
+                                    <span>Total:</span>
+                                    <span id="total-amount">$0.00</span>
+                                </div>
+                            </div>
+                            <button class="checkout-btn" id="checkout-btn" style="display: none;">
+                                <i class="fas fa-credit-card"></i> Finalizar Compra
+                            </button>
+                        </div>
+
+                        <!-- Lista de deseos -->
+                        <div class="wishlist-panel" id="wishlist-panel" style="display: none;">
+                            <div class="panel-header">
+                                <h3><i class="fas fa-heart"></i> Tu Lista de Deseos</h3>
+                                <button class="close-panel" id="close-wishlist">&times;</button>
+                            </div>
+                            <div class="wishlist-items" id="wishlist-items">
+                                <div class="empty-wishlist" id="empty-wishlist">
+                                    <i class="fas fa-heart"></i>
+                                    <p>Tu lista de deseos está vacía</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de checkout -->
+        <div class="modal" id="checkout-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Finalizar Compra</h3>
+                    <button class="close-modal" id="close-checkout">&times;</button>
+                </div>
+                <form id="checkout-form">
+                    <div class="form-section">
+                        <h4>Información Personal</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Teléfono *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">País *</label>
+                                <select id="country" required>
+                                    <option value="">Seleccionar país</option>
+                                    <option value="mx">México</option>
+                                    <option value="es">España</option>
+                                    <option value="ar">Argentina</option>
+                                    <option value="co">Colombia</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Dirección de Envío</h4>
+                        <div class="form-group">
+                            <label for="address">Dirección *</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Ciudad *</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Código Postal *</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4>Resumen del Pedido</h4>
+                        <div class="order-summary" id="order-summary">
+                            <!-- Resumen se cargará aquí -->
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="back-to-cart">Volver al Carrito</button>
+                        <button type="submit" class="checkout-btn">
+                            <i class="fas fa-check"></i> Confirmar Pedido
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de éxito -->
+        <div class="modal" id="success-modal">
+            <div class="modal-content success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>¡Pedido Realizado con Éxito!</h3>
+                <p>Hemos enviado una confirmación a tu correo electrónico.</p>
+                <p>Tu pedido será procesado y enviado en breve.</p>
+                <div class="order-details" id="order-details">
+                    <!-- Detalles del pedido se cargarán aquí -->
+                </div>
+                <button class="checkout-btn" id="continue-shopping">Seguir Comprando</button>
+            </div>
+        </div>
+
+        <!-- Notificaciones -->
+        <div id="notification-container"></div>
+    </div>
+
+    <script src="/js/carrito.js"></script>
+</body>
+</html>

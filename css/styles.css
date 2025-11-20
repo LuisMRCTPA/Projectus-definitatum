@@ -1,0 +1,205 @@
+.c1{
+    width: 500px;
+    height: 800px;
+    align-content: center;
+    background-image: linear-gradient(to bottom right, #2062dd, #333);
+    border: solid black 2px;
+    gap: 20px;
+    padding-top: 15px;
+    display: inline-block;
+    padding: 20px;
+}
+.container1{
+    max-width: 15000px;
+    max-height:10000px;
+    align-content: center;
+    display: flex;
+    padding-top: 150px;
+    
+}
+
+.doc {
+    width: 1400px;
+    height: 900px;
+    align-content: center;
+    background-image: linear-gradient(to bottom right, #2062dd, #333);
+    border: solid black 2px;
+    gap: 20px;
+    padding-top: 15px;
+    padding: 20px;
+}
+.doc1{
+    width: 1400px;
+    height: 2000px;
+    align-content: center;
+    background-image: linear-gradient(to bottom right, #2062dd, #333);
+    border: solid black 2px;
+    gap: 20px;
+    padding-top: 15px;
+    padding: 20px;
+}
+.container{
+     max-width: 15000px;
+    max-height:10000px;
+    align-content: center;
+    display: flex;
+    align-content: center;
+}
+#Exp{
+    padding-left: 550px;
+    width: 1950px;
+    height: 500px;
+    padding-top: 150px;
+    border-radius: 15%;
+}
+#Expi {
+    padding-left: 550px;
+    width: 1950px;
+    height: 500px;
+    padding-top: 50px;
+}
+#Expir {
+    padding-left: 550px;
+    width: 1950px;
+    height: 550px;
+}
+#Expe {
+    width: 1650px;
+    height: 400px;
+}
+.container2{
+    max-width: 15000px;
+    max-height:10000px;
+    align-content: center;
+    display: flex;
+    padding-top: 100px;
+    padding-left: 650px;
+    height: 3050px;
+}
+h1{
+    text-align: center;
+}
+/* Mobile Fixes - Add this at the end of your CSS */
+
+@media (max-width: 768px) {
+    .main {
+        height: auto !important;
+        min-height: 100vh;
+    }
+    
+    .navbar {
+        padding: 10px !important;
+    }
+    
+    .navdiv {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo a {
+        font-size: 28px !important;
+    }
+    
+    li {
+        display: block !important;
+        text-align: center;
+        margin: 10px 0 !important;
+    }
+    
+    li a {
+        margin-right: 0 !important;
+        font-size: 16px !important;
+    }
+    
+    .search {
+        width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    
+    .srch {
+        width: 70% !important;
+        float: none !important;
+        display: inline-block;
+    }
+    
+    .btn {
+        width: 25% !important;
+        display: inline-block;
+        border-radius: 5px !important;
+    }
+    
+    .content {
+        width: 100% !important;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .content h1 {
+        font-size: 32px !important;
+        margin-top: 20px !important;
+        padding-left: 0 !important;
+    }
+    
+    .content span {
+        font-size: 36px !important;
+    }
+    
+    .content .par {
+        padding: 10px !important;
+        font-size: 14px;
+        line-height: 1.6 !important;
+    }
+    
+    .form {
+        position: static !important;
+        width: 100% !important;
+        max-width: 400px;
+        margin: 30px auto !important;
+        height: auto !important;
+        padding: 20px !important;
+    }
+    
+    .form h2 {
+        width: 100% !important;
+        font-size: 22px !important;
+    }
+    
+    .form input {
+        width: 100% !important;
+    }
+    
+    .btnn {
+        width: 100% !important;
+    }
+    
+    /* Fix container widths */
+    .container {
+        max-width: 100% !important;
+    }
+    
+    .container-sm {
+        max-width: 100% !important;
+    }
+}
+
+/* For really small phones */
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 28px !important;
+    }
+    
+    .content span {
+        font-size: 32px !important;
+    }
+    
+    .logo a {
+        font-size: 24px !important;
+    }
+    
+    button {
+        width: 80px !important;
+        padding: 8px !important;
+    }
+}
